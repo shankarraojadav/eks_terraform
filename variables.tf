@@ -17,3 +17,11 @@ variable "availability_zones" {
   type = list
   default = ["ap-south-1a", "ap-south-1b"]
 }
+
+variable "team-ips" {
+  default = [
+    "1.1.1.1/32",
+    "8.8.8.8/32"
+  ]
+  type = list(string)
+}
