@@ -13,6 +13,10 @@ module "vpc" {
     "kubernetes.io/role/internal-elb" = "1"
   }
 
+  private_subnet_tags = {
+    "kubernetes.io/role/internal-elb"      = "1"
+  }
+
   enable_dns_hostnames = true
   enable_dns_support   = true
 
