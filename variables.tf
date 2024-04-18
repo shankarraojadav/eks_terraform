@@ -25,3 +25,42 @@ variable "team-ips" {
   ]
   type = list(string)
 }
+
+
+variable "wn-instance-types" {
+  default = {
+    dev  = ["t3a.medium"]
+    prod = ["m5a.2xlarge"]
+  }
+  type = object({
+    dev  = list(string)
+    prod = list(string)
+  })
+}
+
+variable "rds-instance-type" {
+  default = {
+    dev  = "db.t3.small"
+    prod = "db.m6g.2xlarge"
+  }
+  type = object({
+    dev  = string
+    prod = string
+  })
+}
+
+variable "eks-cluster-name" {
+  default = "kube-wp"
+  type    = string
+}
+
+variable "wn-disk-size" {
+  default = 30
+  type    = number
+}
+
+
+variable "stage" {
+  default = "dev"
+  type    = string
+}
